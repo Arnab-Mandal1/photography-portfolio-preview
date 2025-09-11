@@ -1,4 +1,3 @@
-import React from 'react';
 import ImageCard from './ImageCard';
 
 const images = [
@@ -10,7 +9,11 @@ const images = [
     {src: 'https://source.unsplash.com/random/800x600?tropical,flowers', alt: 'A tropical flowers photograph'},
 ];
 
-const Gallery = ({onImageClick}) => {
+interface GalleryProps {
+    onImageClick: (image: { src: string; alt: string }) => void;
+}
+
+const Gallery = ({onImageClick}: GalleryProps) => {
     return (
         <section id="gallery" className="py-12 bg-cyan-50">
             <div className="container mx-auto px-6">
